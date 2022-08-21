@@ -9,7 +9,6 @@ The steps might be a bit long, but they are very easy:
 
 4- Click on the start buttons of Apache and MySQL.
 
-5- Go to your 
 
 # Part II: Data Base setup
 1- Go to your browser and paste the following link "http://localhost/phpmyadmin".
@@ -24,14 +23,21 @@ The steps might be a bit long, but they are very easy:
 1- The database connection:
 
 define('DB_SERVER', 'localhost');
+
 define('DB_USERNAME', 'root');
+
 define('DB_PASSWORD', '');
+
 define('DB_NAME', 'integers');
 
 try{
     $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
+    
+} 
+catch(PDOException $e){
+
     die("ERROR: Could not connect. " . $e->getMessage());
 }
 
@@ -41,8 +47,10 @@ $data= $_GET['data'];
 
 3- Insert the record in the DB:
 
-$sql = "INSERT INTO numbers (num) values ('$data')";    
+$sql = "INSERT INTO numbers (num) values ('$data')"; 
+
 if($pdo->exec($sql)===TRUE);
+
   echo "The record $data has been saved successfully";
 
 
