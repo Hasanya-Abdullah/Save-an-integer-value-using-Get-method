@@ -52,6 +52,8 @@ $sql = "INSERT INTO numbers (num) values ('$data')";
 if($pdo->exec($sql)===TRUE);
 
   echo "The record $data has been saved successfully";
+  
+  4- finally, go to your browser and on the search bar type "localhost/filename.php?data=5".
 
 
 
